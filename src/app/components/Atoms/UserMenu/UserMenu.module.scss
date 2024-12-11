@@ -1,0 +1,16 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  p {
+    font-size: 13px;
+    line-height: 17px;
+    color: #7a7a7a;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
