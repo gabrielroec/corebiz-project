@@ -25,11 +25,21 @@
 
 .carouselContainer {
   display: flex;
-  gap: 24px;
+  gap: 99px;
+  align-items: stretch;
 }
 .slide {
   flex: 0 0 auto;
-  min-width: 0;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.slide:hover {
+  background-color: #e6e8ea;
 }
 .navButton {
   position: absolute;
@@ -42,9 +52,43 @@
   color: #000;
 }
 .prevButton {
-  left: -20px;
+  left: -50px;
 }
 
 .nextButton {
-  right: -20px;
+  right: -50px;
+}
+
+.loadingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.skeleton {
+  width: 216px;
+  height: 353px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .loadingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navButton {
+    display: none;
+  }
 }
