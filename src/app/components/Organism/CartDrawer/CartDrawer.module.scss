@@ -11,7 +11,7 @@
 }
 
 .drawer {
-  width: 400px;
+  width: 300px;
   height: 100%;
   background: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
@@ -27,82 +27,4 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-}
-
-.cartList {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  .cartItem {
-    border: 1px solid #cccccc59;
-    border-radius: 10px;
-    padding: 10px;
-    position: relative;
-
-    .itemDetails {
-      display: flex;
-      align-items: center;
-
-      img {
-        width: 80px;
-      }
-
-      .itemName {
-        font-size: 12px;
-        font-weight: 800;
-      }
-      .itemPrice {
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      .quantityControls {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 10px;
-      }
-
-      .actionButton {
-        width: 25px;
-        height: 25px;
-        border-radius: 900px;
-        border: 1px solid #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        -webkit-border-radius: 900px;
-        -moz-border-radius: 900px;
-        -ms-border-radius: 900px;
-        -o-border-radius: 900px;
-        transition: all 0.2s ease;
-        &:hover {
-          background-color: #ccc;
-          color: #fff;
-        }
-      }
-    }
-
-    .itemActions {
-      position: absolute;
-      width: fit-content;
-      top: 10px;
-      right: 10px;
-      .removeButton {
-        color: rgba($color: red, $alpha: 0.5);
-        cursor: pointer;
-        font-size: 12px;
-        transition: all 0.2s ease;
-        &:hover {
-          color: red;
-        }
-      }
-    }
-  }
-}
-.cartSummary {
-  position: absolute;
-  bottom: 20px;
 }
