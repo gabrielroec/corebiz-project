@@ -1,7 +1,20 @@
 .container {
   padding: 24px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+}
+.titleContainer {
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 900;
+}
+.line {
+  margin-top: 6px;
+  width: 65px;
+  height: 4px;
+  background-color: #c0c0c0;
 }
 .carouselWrapper {
   position: relative;
