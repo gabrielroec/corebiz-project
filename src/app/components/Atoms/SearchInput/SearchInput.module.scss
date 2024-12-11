@@ -1,0 +1,35 @@
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7a7a7a;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #2c2c2c;
+    transition: width 0.3s ease;
+  }
+
+  &.focused::after {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search {
+    position: absolute;
+    right: 0;
+  }
+}
