@@ -5,12 +5,14 @@ import styles from "./ProductCard.module.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import badge from "../../../../assets/badge.svg";
+import { useCart } from "../../../lib/context/CartContext";
 interface ProductCardProps {
   product: Product;
   onBuy: (productId: number) => void;
 }
-const ProductCard = ({ product, onBuy }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   const [hovered, setHovered] = useState(false);
+  const { addToCart } = useCart();
   return (
     <motion.div
       className={styles.productCard}
@@ -31,11 +33,10 @@ const ProductCard = ({ product, onBuy }: ProductCardProps) => {
           <StarRating rating={product.stars} maxRating={5} />
           <Price listPrice={product.listPrice} price={product.price} installments={product.installments} />
           <motion.button
-            className={styles.buyButton}
-            onClick={() => onBuy(product.productId)}
+            onClick={() => addToCart(product)}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 10 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.1 }}
           >
             Comprar
           </motion.button>

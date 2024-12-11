@@ -5,10 +5,11 @@ import SearchInput from "../../Atoms/SearchInput/SearchInput";
 import UserMenu from "../../Molecules/UserMenu/UserMenu";
 import styles from "./Header.module.scss";
 import CartDrawer from "../CartDrawer/CartDrawer";
+import { useCart } from "../../../lib/context/CartContext";
 
 const Header = () => {
   const [isCartOpen, setCartOpen] = useState(false);
-  const itemCount = 0;
+  const { getItemCount } = useCart(); // Agora usa a função getItemCount
 
   return (
     <>
@@ -20,11 +21,11 @@ const Header = () => {
           </div>
           <div className={styles.actions}>
             <UserMenu />
-            <CartButton itemCount={itemCount} onClick={() => setCartOpen(true)} />
+            <CartButton itemCount={getItemCount()} onClick={() => setCartOpen(true)} />
           </div>
         </div>
       </header>
-      <CartDrawer isOpen={isCartOpen} onClose={() => setCartOpen(false)} itemCount={itemCount} />
+      <CartDrawer isOpen={isCartOpen} onClose={() => setCartOpen(false)} />
     </>
   );
 };
