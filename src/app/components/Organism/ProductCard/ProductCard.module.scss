@@ -22,7 +22,6 @@
     text-align: center;
   }
   button {
-    cursor: pointer;
     background-color: #000;
     padding: 8px 32px;
     color: #fff;
@@ -32,10 +31,5 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    transition: all 0.2s ease;
-    &:hover {
-      background-color: #5c5c5c;
-      color: #fff;
-    }
   }
 }
