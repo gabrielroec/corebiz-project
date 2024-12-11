@@ -45,10 +45,10 @@ const ProducCarousel = () => {
 
   if (loading) {
     return (
-      <div>
-        <div>
+      <div className={styles.container}>
+        <div className={styles.loadingGrid}>
           {[...Array(4)].map((_, index) => (
-            <div key={index} />
+            <div key={index} className={styles.skeleton} />
           ))}
         </div>
       </div>
