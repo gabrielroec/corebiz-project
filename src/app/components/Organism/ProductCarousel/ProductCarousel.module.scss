@@ -1,0 +1,37 @@
+.container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.carouselWrapper {
+  position: relative;
+}
+.carousel {
+  overflow: hidden;
+}
+
+.carouselContainer {
+  display: flex;
+  gap: 24px;
+}
+.slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #000;
+}
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}
