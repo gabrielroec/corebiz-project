@@ -57,6 +57,10 @@ const ProducCarousel = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.titleContainer}>
+        <p className={styles.title}>Mais vendidos</p>
+        <div className={styles.line}></div>
+      </div>
       <div className={styles.carouselWrapper}>
         <button onClick={scrollPrev} className={`${styles.navButton} ${styles.prevButton}`}>
           <ChevronLeft />
