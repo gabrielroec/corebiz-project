@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7px;
+
+  .listPrice {
+    font-size: 12px;
+    color: #7a7a7a;
+    text-decoration: line-through;
+
+    .listPriceValue {
+      text-decoration: line-through;
+    }
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .installments {
+    font-size: 12px;
+    color: #7a7a7a;
+  }
+}
