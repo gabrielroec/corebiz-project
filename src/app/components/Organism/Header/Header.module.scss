@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+
+    .center {
+      flex: 1;
+      margin: 0 43px 0 121px;
+    }
+
+    .rightSide {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+  }
+}
+
+@media (width <= 1025px) {
+  .header {
+    justify-content: space-between;
+  }
+}

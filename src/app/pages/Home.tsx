@@ -1,15 +1,9 @@
-import HeroSlider from "../components/Organism/HeroSlider/HeroSlider";
-import ProducCarousel from "../components/Organism/ProductCarousel/ProducCarousel";
+import Header from "../components/Organism/Header/Header";
 
 const Home = () => {
   return (
     <>
-      <div>
-        <HeroSlider />
-      </div>
-      <div>
-        <ProducCarousel />
-      </div>
+      <Header />
     </>
   );
 };
