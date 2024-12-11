@@ -25,8 +25,8 @@
 
 .carouselContainer {
   display: flex;
-  justify-content: start;
-  gap: 6.25rem;
+  gap: 115px;
+  align-items: stretch;
 }
 .slide {
   flex: 0 0 auto;
@@ -52,11 +52,11 @@
   color: #000;
 }
 .prevButton {
-  left: -10px;
+  left: -20px;
 }
 
 .nextButton {
-  right: -10px;
+  right: -20px;
 }
 
 .loadingGrid {
