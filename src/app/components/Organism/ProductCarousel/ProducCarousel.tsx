@@ -70,12 +70,7 @@ const ProducCarousel = () => {
             {products.map((product) => {
               return (
                 <div key={product.productId} className={styles.slide}>
-                  <ProductCard
-                    product={product}
-                    onBuy={() => {
-                      console.log("Comprar");
-                    }}
-                  />
+                  <ProductCard product={product} onBuy={() => {}} />
                 </div>
               );
             })}
