@@ -10,7 +10,7 @@ const ProductCard = ({ product, onBuy }: ProductCardProps) => {
     <div>
       <div>
         {product.listPrice && <span>OFF</span>}
-        <img src={product.imageUrl} alt={product.productName} width={216} height={216} loading="lazy" />
+        <img src={product.imageUrl} alt={product.productName} loading="lazy" />
       </div>
       <div>
         <h3>{product.productName}</h3>
