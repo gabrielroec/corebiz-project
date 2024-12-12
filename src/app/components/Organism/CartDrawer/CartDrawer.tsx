@@ -1,5 +1,7 @@
-import { motion } from "framer-motion"; // Importando o Framer Motion
+import { motion } from "framer-motion";
 import styles from "./CartDrawer.module.scss";
+import { useCart } from "../../../lib/context/CartContext";
+import { X } from "lucide-react";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -7,6 +9,7 @@ interface CartDrawerProps {
 }
 
 const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
+  const { products, total, increaseQuantity, decreaseQuantity, removeProduct } = useCart();
   return (
     <>
       {isOpen && (
@@ -28,8 +31,33 @@ const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
         <h2>Seu Carrinho</h2>
-        <p>O carrinho está vazio!</p>
-        <button onClick={onClose}>Fechar</button>
+        {products.length === 0 ? (
+          <p>O carrinho está vazio!</p>
+        ) : (
+          <>
+            {products.map((product) => (
+              <div key={product.id} className={styles.product}>
+                <img src={product.imageUrl} alt={product.productName} />
+                <div>
+                  <p>{product.productName}</p>
+                  <p>R${product.price}</p>
+                  <div className={styles.quantity}>
+                    <button onClick={() => decreaseQuantity(product.id)}>-</button>
+                    <span>{product.quantity}</span>
+                    <button onClick={() => increaseQuantity(product.id)}>+</button>
+                  </div>
+                  <button onClick={() => removeProduct(product.id)}>Remover</button>
+                </div>
+              </div>
+            ))}
+            <div className={styles.total}>
+              <p>Total: R${total.toFixed(2)}</p>
+            </div>
+          </>
+        )}
+        <button className={styles.close} onClick={onClose}>
+          <X />
+        </button>
       </motion.div>
     </>
   );
