@@ -18,6 +18,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ productName, listPrice, price, stars, installments, imageUrl, onBuy }: ProductCardProps) => {
   const [showBuyButton, setShowBuyButton] = useState(false);
+
   return (
     <div className={styles.productCardWrapper} onMouseEnter={() => setShowBuyButton(true)} onMouseLeave={() => setShowBuyButton(false)}>
       <img src={imageUrl} alt={productName} className={styles.productImage} />
