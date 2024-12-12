@@ -150,3 +150,9 @@
   gap: 10px;
   height: 50%;
 }
+
+@media (width <= 768px) {
+  .drawer {
+    width: 80%;
+  }
+}
