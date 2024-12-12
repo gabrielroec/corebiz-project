@@ -1,0 +1,17 @@
+.newsForm {
+  background-color: #f2f2f2;
+  padding: 34px 0;
+
+  p {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+}
