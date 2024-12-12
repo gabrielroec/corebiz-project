@@ -1,20 +1,21 @@
-/* CartDrawer.module.scss */
-
-/* Estilos do Drawer */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
 .drawer {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 300px;
+  width: 500px;
   background-color: white;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   z-index: 50;
   padding: 20px;
   overflow-y: auto;
 }
-
-/* Overlay */
 .overlay {
   z-index: 10;
   position: fixed;
