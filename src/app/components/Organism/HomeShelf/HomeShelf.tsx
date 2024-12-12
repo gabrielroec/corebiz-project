@@ -7,9 +7,10 @@ import SectionTitle from "../../Atoms/SectionTitle/SectionTitle";
 import useEmblaCarousel from "embla-carousel-react";
 import axios from "axios";
 import SyncLoader from "react-spinners/SyncLoader";
+import { useCart } from "../../../lib/context/CartContext";
 
 interface ProductProps {
-  id: number;
+  productId: number;
   productName: string;
   price: number;
   listPrice: number;
@@ -22,6 +23,7 @@ interface ProductProps {
 }
 
 const HomeShelf = () => {
+  const { addProduct } = useCart();
   const [product, setProduct] = useState<ProductProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -64,6 +66,16 @@ const HomeShelf = () => {
     );
   }
 
+  const handleBuy = (product: ProductProps) => {
+    addProduct({
+      id: product.productId,
+      productName: product.productName,
+      price: product.price,
+      quantity: 1,
+      imageUrl: product.imageUrl,
+    });
+  };
+
   return (
     <div className={styles.container}>
       <SectionTitle title="Mais Vendidos" />
@@ -71,18 +83,16 @@ const HomeShelf = () => {
         <div className={styles.embla} ref={emblaRef}>
           <div className={styles.embla__container}>
             {product.map((product) => (
-              <div key={product.id} className={styles.embla__slide}>
+              <div key={product.productId} className={styles.embla__slide}>
                 <ProductCard
-                  key={product.id}
+                  key={product.productId}
                   productName={product.productName}
                   listPrice={product.listPrice}
                   price={product.price}
                   stars={product.stars}
                   installments={product.installments}
                   imageUrl={product.imageUrl}
-                  onBuy={() => {
-                    console.log("Comprou");
-                  }}
+                  onBuy={() => handleBuy(product)}
                 />
               </div>
             ))}
