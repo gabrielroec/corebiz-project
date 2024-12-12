@@ -44,27 +44,29 @@ const NewsletterForm = () => {
 
   return (
     <div className={styles.newsForm}>
-      <p>Participe de nossas news com promoções e novidades!</p>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <FormField
-          placeholder="Digite seu nome"
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          error={error.name}
-        />
-        <FormField
-          placeholder="Digite seu e-mail"
-          name="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          error={error.email}
-        />
-        <Button type="submit">Eu quero!</Button>
-      </form>
-      <ToastContainer />
+      <div className={styles.container}>
+        <p>Participe de nossas news com promoções e novidades!</p>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <FormField
+            placeholder="Digite seu nome"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            error={error.name}
+          />
+          <FormField
+            placeholder="Digite seu e-mail"
+            name="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            error={error.email}
+          />
+          <Button type="submit">Eu quero!</Button>
+        </form>
+        <ToastContainer />
+      </div>
     </div>
   );
 };

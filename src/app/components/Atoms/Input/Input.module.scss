@@ -8,3 +8,11 @@
   font-size: 12px;
   font-weight: 700;
 }
+
+@media (width <= 1025px) {
+  .input {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+}

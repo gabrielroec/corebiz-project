@@ -14,3 +14,11 @@
 .button:hover {
   background-color: #f8475f;
 }
+
+@media (width <= 1025px) {
+  .button {
+    width: 100%;
+    max-width: 100%;
+    margin-top: calc(-22px + 7px);
+  }
+}
