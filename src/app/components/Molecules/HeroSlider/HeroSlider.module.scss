@@ -1,0 +1,54 @@
+.heroWrapper {
+  position: relative;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.slideImage {
+  width: 100%;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active {
+  background-color: #f8475f;
+  transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+}
