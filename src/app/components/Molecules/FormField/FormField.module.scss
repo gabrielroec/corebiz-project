@@ -1,0 +1,17 @@
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+}
+@media (width <= 1025px) {
+  .formField {
+    width: 100%;
+    max-width: 100%;
+  }
+  .error {
+    position: relative;
+    top: -22px;
+  }
+}
