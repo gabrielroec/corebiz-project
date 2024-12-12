@@ -3,4 +3,59 @@
   max-width: 1280px;
   margin: 25px auto 0 auto;
   padding: 0 24px;
+  position: relative;
+}
+.spinner {
+  position: absolute;
+  margin-top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  gap: 10px;
+}
+
+.embla__slide {
+  flex: 0 0 25%;
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 1rem;
+  color: #000;
+}
+
+.embla__button__prev {
+  left: -30px;
+}
+
+.embla__button__next {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 50%;
+  }
 }

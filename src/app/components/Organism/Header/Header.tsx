@@ -6,9 +6,16 @@ import Cart from "../../Atoms/Cart/Cart";
 import SearchInput from "../../Atoms/SearchInput/SearchInput";
 import Logo from "../../Atoms/Logo/Logo";
 import UserMenu from "../../Atoms/UserMenu/UserMenu";
+import CartDrawer from "../CartDrawer/CartDrawer";
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const toggleCart = () => {
+    setIsCartOpen(() => !isCartOpen);
+  };
+
   useEffect(() => {
     const handleResize = (): void => {
       setWindowWidth(window.innerWidth);
@@ -33,7 +40,8 @@ const Header = () => {
         <div className={styles.rightSide}>
           {windowWidth > 1025 && <UserMenu />}
 
-          <Cart />
+          <Cart onClick={toggleCart} />
+          <CartDrawer isOpen={isCartOpen} onClose={toggleCart} />
         </div>
       </header>
       {windowWidth < 1025 && (
